@@ -1,0 +1,11 @@
+C:\PROJECTS\GeodiModules_Default\OtherProjects\GeodiApiProjects\WinAppDataExtraction\DataExtraction\DataExtraction\bin\Debug\DataExtraction.exe.config
+C:\PROJECTS\GeodiModules_Default\OtherProjects\GeodiApiProjects\WinAppDataExtraction\DataExtraction\DataExtraction\bin\Debug\DataExtraction.exe
+C:\PROJECTS\GeodiModules_Default\OtherProjects\GeodiApiProjects\WinAppDataExtraction\DataExtraction\DataExtraction\bin\Debug\DataExtraction.pdb
+C:\PROJECTS\GeodiModules_Default\OtherProjects\GeodiApiProjects\WinAppDataExtraction\DataExtraction\DataExtraction\obj\Debug\DataExtraction.csprojResolveAssemblyReference.cache
+C:\PROJECTS\GeodiModules_Default\OtherProjects\GeodiApiProjects\WinAppDataExtraction\DataExtraction\DataExtraction\obj\Debug\DataExtraction.RecognizeForm.resources
+C:\PROJECTS\GeodiModules_Default\OtherProjects\GeodiApiProjects\WinAppDataExtraction\DataExtraction\DataExtraction\obj\Debug\DataExtraction.Properties.Resources.resources
+C:\PROJECTS\GeodiModules_Default\OtherProjects\GeodiApiProjects\WinAppDataExtraction\DataExtraction\DataExtraction\obj\Debug\DataExtraction.csproj.GenerateResource.Cache
+C:\PROJECTS\GeodiModules_Default\OtherProjects\GeodiApiProjects\WinAppDataExtraction\DataExtraction\DataExtraction\obj\Debug\DataExtraction.exe
+C:\PROJECTS\GeodiModules_Default\OtherProjects\GeodiApiProjects\WinAppDataExtraction\DataExtraction\DataExtraction\obj\Debug\DataExtraction.pdb
+C:\PROJECTS\GeodiModules_Default\OtherProjects\GeodiApiProjects\WinAppDataExtraction\DataExtraction\DataExtraction\bin\Debug\Geodi.Integration.dll
+C:\PROJECTS\GeodiModules_Default\OtherProjects\GeodiApiProjects\WinAppDataExtraction\DataExtraction\DataExtraction\bin\Debug\Newtonsoft.Json.dll
