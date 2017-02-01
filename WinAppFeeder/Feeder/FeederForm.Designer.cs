@@ -67,7 +67,7 @@
             this.serviceTextBox.Name = "serviceTextBox";
             this.serviceTextBox.Size = new System.Drawing.Size(754, 20);
             this.serviceTextBox.TabIndex = 2;
-            this.serviceTextBox.Text = "http://127.0.0.1:3323/GUI/FeedHandler?op=Feed";
+            this.serviceTextBox.Text = "http://127.0.0.1:3323/GUI/FeedHandler?op=BulkFeed";
             // 
             // folderLabel
             // 
