@@ -73,7 +73,8 @@ namespace DataExtraction
                 localContentResultTreeView.Hide();
                 try
                 {
-                    byte[] result = client.UploadFile("DataExtractionHandler", LFile);
+                    
+                    byte[] result = client.UploadData("DataExtractionHandler", File.ReadAllBytes(LFile));
                     Json2Tree(localContentResultTreeView, Encoding.UTF8.GetString(result));
                     localContentResultTreeView.Show();
                 }
