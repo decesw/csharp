@@ -1,2 +1,2 @@
 # csharp
-GEODI Web Servislerini çağıran Windows Forms Uygulamaları
+GEODI Web Servislerini çağıran Windows Forms ve Web Uygulamaları
