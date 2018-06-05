@@ -29,6 +29,14 @@ public class FeedNow : IHttpHandler
             item.ContentURL = string.Concat(RequestUrl, "/GetContent.ashx?content=", HttpUtility.UrlEncode(file.Name));
             item.DisplayName = file.Name;
             item.ContentDate = file.LastWriteTimeUtc;
+                
+            
+            item.MetaData = new List<Geodi.Integration.MetaData>();
+            Geodi.Integration.MetaData meta = new Geodi.Integration.MetaData();
+            meta.Name = "Alan";
+            meta.Value = "FeedTest";
+            item.MetaData.Add(meta);
+
 
             //Özel yetki tanımlanmış ve GEODI/Settings/RoleProivder altında GetRoles servis adresiniz tanımlanmamışsa bu içerikleri Sistem Yöneticisi dışında kimse göremez.
             if (lUseRoles)
