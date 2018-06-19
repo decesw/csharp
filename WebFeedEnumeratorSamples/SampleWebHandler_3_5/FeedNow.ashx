@@ -29,8 +29,10 @@ public class FeedNow : IHttpHandler
             item.ContentURL = string.Concat(RequestUrl, "/GetContent.ashx?content=", HttpUtility.UrlEncode(file.Name));
             item.DisplayName = file.Name;
             item.ContentDate = file.LastWriteTimeUtc;
-                
-            
+            item.Content = new ContentData();
+            item.Content.Extension = file.Extension;
+
+
             item.MetaData = new List<Geodi.Integration.MetaData>();
             Geodi.Integration.MetaData meta = new Geodi.Integration.MetaData();
             meta.Name = "Alan";
