@@ -15,7 +15,9 @@ namespace WinAppToken
             Feed = 1,
             Query = 2,
             Recognize = 4,
-            WsInfo = 8
+            WsInfo = 8,
+            ClientToken = 16,
+            Any= 256
         }
 
         string GeodiUrl { get { return geodiUrlTextBox.Text.Trim(); } }
@@ -25,6 +27,7 @@ namespace WinAppToken
         bool IsRecognizeSelected { get { return recognizeCheckBox.Checked; } }
         bool IsWsInfSelected { get { return wsInfCheckBox.Checked; } }
         bool IsFeedSelected { get { return feedCheckBox.Checked; } }
+        bool IsClientTokenSelected { get { return chkClienToken.Checked; } }
         string WsName { get { return wsNameTextBox.Text; } }
         string EnumID { get { return enumIDTextBox.Text; } }
         string Token { set { tokenRichTextBox.Text = value; } }
@@ -52,6 +55,7 @@ namespace WinAppToken
                 if (IsRecognizeSelected) tokenTarget |= TokenTarget.Recognize;
                 if (IsWsInfSelected) tokenTarget |= TokenTarget.WsInfo;
                 if (IsFeedSelected) tokenTarget |= TokenTarget.Feed;
+                if (IsClientTokenSelected) tokenTarget |= TokenTarget.ClientToken;
 
                 int tokenTargetVal = Convert.ToInt32(tokenTarget);
                 string Username = HttpUtility.UrlEncode(User);

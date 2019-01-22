@@ -45,6 +45,7 @@
             this.enumIDLabel = new System.Windows.Forms.Label();
             this.enumIDTextBox = new System.Windows.Forms.TextBox();
             this.tokenRichTextBox = new System.Windows.Forms.RichTextBox();
+            this.chkClienToken = new System.Windows.Forms.CheckBox();
             geodiUrlLabel = new System.Windows.Forms.Label();
             usrLabel = new System.Windows.Forms.Label();
             pswLabel = new System.Windows.Forms.Label();
@@ -82,7 +83,7 @@
             // createButton
             // 
             createButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            createButton.Location = new System.Drawing.Point(314, 237);
+            createButton.Location = new System.Drawing.Point(314, 259);
             createButton.Name = "createButton";
             createButton.Size = new System.Drawing.Size(75, 23);
             createButton.TabIndex = 9;
@@ -93,7 +94,7 @@
             // tokenLabel
             // 
             tokenLabel.AutoSize = true;
-            tokenLabel.Location = new System.Drawing.Point(13, 270);
+            tokenLabel.Location = new System.Drawing.Point(13, 299);
             tokenLabel.Name = "tokenLabel";
             tokenLabel.Size = new System.Drawing.Size(38, 13);
             tokenLabel.TabIndex = 11;
@@ -167,7 +168,7 @@
             // feedCheckBox
             // 
             this.feedCheckBox.AutoSize = true;
-            this.feedCheckBox.Location = new System.Drawing.Point(85, 163);
+            this.feedCheckBox.Location = new System.Drawing.Point(85, 185);
             this.feedCheckBox.Name = "feedCheckBox";
             this.feedCheckBox.Size = new System.Drawing.Size(50, 17);
             this.feedCheckBox.TabIndex = 6;
@@ -179,7 +180,7 @@
             // 
             this.wsNameLabel.AutoSize = true;
             this.wsNameLabel.Enabled = false;
-            this.wsNameLabel.Location = new System.Drawing.Point(82, 187);
+            this.wsNameLabel.Location = new System.Drawing.Point(82, 209);
             this.wsNameLabel.Name = "wsNameLabel";
             this.wsNameLabel.Size = new System.Drawing.Size(93, 13);
             this.wsNameLabel.TabIndex = 7;
@@ -190,7 +191,7 @@
             this.wsNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.wsNameTextBox.Enabled = false;
-            this.wsNameTextBox.Location = new System.Drawing.Point(184, 184);
+            this.wsNameTextBox.Location = new System.Drawing.Point(184, 206);
             this.wsNameTextBox.Name = "wsNameTextBox";
             this.wsNameTextBox.Size = new System.Drawing.Size(206, 20);
             this.wsNameTextBox.TabIndex = 7;
@@ -199,7 +200,7 @@
             // 
             this.enumIDLabel.AutoSize = true;
             this.enumIDLabel.Enabled = false;
-            this.enumIDLabel.Location = new System.Drawing.Point(82, 213);
+            this.enumIDLabel.Location = new System.Drawing.Point(82, 235);
             this.enumIDLabel.Name = "enumIDLabel";
             this.enumIDLabel.Size = new System.Drawing.Size(75, 13);
             this.enumIDLabel.TabIndex = 8;
@@ -210,7 +211,7 @@
             this.enumIDTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.enumIDTextBox.Enabled = false;
-            this.enumIDTextBox.Location = new System.Drawing.Point(184, 210);
+            this.enumIDTextBox.Location = new System.Drawing.Point(184, 232);
             this.enumIDTextBox.Name = "enumIDTextBox";
             this.enumIDTextBox.Size = new System.Drawing.Size(206, 20);
             this.enumIDTextBox.TabIndex = 8;
@@ -220,18 +221,30 @@
             this.tokenRichTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tokenRichTextBox.Location = new System.Drawing.Point(57, 267);
+            this.tokenRichTextBox.Location = new System.Drawing.Point(57, 296);
             this.tokenRichTextBox.Name = "tokenRichTextBox";
-            this.tokenRichTextBox.Size = new System.Drawing.Size(332, 59);
+            this.tokenRichTextBox.Size = new System.Drawing.Size(332, 171);
             this.tokenRichTextBox.TabIndex = 10;
             this.tokenRichTextBox.Text = "";
+            // 
+            // chkClienToken
+            // 
+            this.chkClienToken.AutoSize = true;
+            this.chkClienToken.Checked = true;
+            this.chkClienToken.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.chkClienToken.Location = new System.Drawing.Point(85, 162);
+            this.chkClienToken.Name = "chkClienToken";
+            this.chkClienToken.Size = new System.Drawing.Size(86, 17);
+            this.chkClienToken.TabIndex = 5;
+            this.chkClienToken.Text = "Client Token";
+            this.chkClienToken.UseVisualStyleBackColor = true;
             // 
             // TokenForm
             // 
             this.AcceptButton = createButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(402, 338);
+            this.ClientSize = new System.Drawing.Size(402, 479);
             this.Controls.Add(this.tokenRichTextBox);
             this.Controls.Add(tokenLabel);
             this.Controls.Add(createButton);
@@ -240,6 +253,7 @@
             this.Controls.Add(this.wsNameTextBox);
             this.Controls.Add(this.wsNameLabel);
             this.Controls.Add(this.feedCheckBox);
+            this.Controls.Add(this.chkClienToken);
             this.Controls.Add(this.wsInfCheckBox);
             this.Controls.Add(this.recognizeCheckBox);
             this.Controls.Add(this.qCheckBox);
@@ -271,6 +285,7 @@
         private System.Windows.Forms.Label enumIDLabel;
         private System.Windows.Forms.TextBox enumIDTextBox;
         private System.Windows.Forms.RichTextBox tokenRichTextBox;
+        private System.Windows.Forms.CheckBox chkClienToken;
     }
 }
 
