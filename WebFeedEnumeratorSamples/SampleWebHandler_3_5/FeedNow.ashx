@@ -61,7 +61,7 @@ public class FeedNow : IHttpHandler
 
         //Dikkat ! .Net 3.5 JavascriptSerializer Tarih alanları Json formatında Serializer etmiyor.  Settings.GetSerializer içeriğinde oluşturulan Serializer kullanılmalıdır.
         string PostData = string.Format("UserSession={0}&content={1}", Uri.EscapeDataString(Settings.GEODIToken), Uri.EscapeDataString(Settings.GetSerializer().Serialize(files)));
-        byte[] data = System.Text.Encoding.ASCII.GetBytes(PostData);
+        byte[] data = System.Text.Encoding.UTF8.GetBytes(PostData);
         request.ContentLength = data.Length;
 
         using (Stream stream = request.GetRequestStream())
