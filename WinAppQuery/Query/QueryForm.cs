@@ -25,6 +25,10 @@ namespace Query
         {
             if(CheckInput())
             {
+
+                //Geodi.Integration.RestApi.QueryApi sınıfıda kullanılarak dönen nesnelere erişilebilir.
+                //Bu örnek sadece WebRequest ile erişimi anlatmaktadır.
+
                 var request = (HttpWebRequest)WebRequest.Create(GeodiUrl + "/QueryHandler?op=" + method);
                 request.Method = "POST";
                 request.Accept = "application/json";
