@@ -17,9 +17,7 @@ public partial class _Default : System.Web.UI.Page
 
     protected void btnUserLoginUrl_Click(object sender, EventArgs e)
     {
-        string Url = Settings.GEODIUrl;
-        Url = string.Concat(Url, Url.EndsWith("/") ? "" : "/", "TokenHandler?op=GetAutoLoginLink");
-
+        
 
         string MyValidator = string.Concat("MyData",Guid.NewGuid());
 
@@ -30,35 +28,14 @@ public partial class _Default : System.Web.UI.Page
         MyValidator = Convert.ToBase64String(MyValidatorBytes);
 
 
+        Geodi.Integration.RestApi.ClientTokenApi ClientTokenService = new Geodi.Integration.RestApi.ClientTokenApi(
+          Settings.GEODIUrl, Settings.GEODIToken);
 
-
-        HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Url);
-        request.Method = "POST";
-        request.Accept = "application/json,*/*; q=0.01";
-        request.ContentType = "application/x-www-form-urlencoded";
-
-        
-        string PostData = string.Format("ClientID={0}&ClientValidator={1}&LoginUser={2}&UserSession={3}",
-            Settings.AppClientID,
-            Uri.EscapeDataString(MyValidator),
-            Uri.EscapeDataString(txtUserFor.Text),
-            Uri.EscapeDataString(Settings.GEODIToken)
-            );
-        byte[] data = System.Text.Encoding.ASCII.GetBytes(PostData);
-        request.ContentLength = data.Length;
-
-        using (Stream stream = request.GetRequestStream())
-        {
-            stream.Write(data, 0, data.Length);
-        }
         try
         {
-            HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-
-            string responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+            string url = ClientTokenService.GetAutoLoginLink(Settings.AppClientID, MyValidator, txtUserFor.Text, 30000);
             lnkGEODIForUser.Visible = true;
-            lnkGEODIForUser.Text = responseString;
-            lnkGEODIForUser.NavigateUrl = responseString;
+            lnkGEODIForUser.Text =  lnkGEODIForUser.NavigateUrl = url;
         }
         catch (WebException Ex)
         {
@@ -66,15 +43,57 @@ public partial class _Default : System.Web.UI.Page
             lnkGEODIForUser.NavigateUrl = "#";
             lnkGEODIForUser.Visible = true;
             lnkGEODIForUser.Text = Ex.Message;
-
             //using (Stream strm = Ex.Response.GetResponseStream())
             //using (StreamReader rdr = new StreamReader(strm))
             //{
             //    string Response = rdr.ReadToEnd();
-
             //}
-
-
         }
+
+
+        //////WebRequest Code
+        ////string Url = Settings.GEODIUrl;
+        ////Url = string.Concat(Url, Url.EndsWith("/") ? "" : "/", "TokenHandler?op=GetAutoLoginLink");
+
+        ////HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Url);
+        ////request.Method = "POST";
+        ////request.Accept = "application/json,*/*; q=0.01";
+        ////request.ContentType = "application/x-www-form-urlencoded";
+
+        
+        ////string PostData = string.Format("ClientID={0}&ClientValidator={1}&LoginUser={2}&UserSession={3}",
+        ////    Settings.AppClientID,
+        ////    Uri.EscapeDataString(MyValidator),
+        ////    Uri.EscapeDataString(txtUserFor.Text),
+        ////    Uri.EscapeDataString(Settings.GEODIToken)
+        ////    );
+        ////byte[] data = System.Text.Encoding.ASCII.GetBytes(PostData);
+        ////request.ContentLength = data.Length;
+
+        ////using (Stream stream = request.GetRequestStream())
+        ////{
+        ////    stream.Write(data, 0, data.Length);
+        ////}
+        ////try
+        ////{
+        ////    HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+
+        ////    string responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+        ////    lnkGEODIForUser.Visible = true;
+        ////    lnkGEODIForUser.Text =  lnkGEODIForUser.NavigateUrl = responseString;
+        ////}
+        ////catch (WebException Ex)
+        ////{
+        ////    lnkGEODIForUser.NavigateUrl = "#";
+        ////    lnkGEODIForUser.Visible = true;
+        ////    lnkGEODIForUser.Text = Ex.Message;
+        ////    //using (Stream strm = Ex.Response.GetResponseStream())
+        ////    //using (StreamReader rdr = new StreamReader(strm))
+        ////    //{
+        ////    //    string Response = rdr.ReadToEnd();
+        ////    //}
+        ////}
+
+
     }
 }
