@@ -22,9 +22,9 @@ public class GetRoles : IHttpHandler
                 Response.Write("Role2");//Sadece Misafir kullanıcılar görebilir şeklinde ayarlandı. Misafir Kullanıcı örnek olarak kullanıldı. // Simple
             else if (user == "ldap:domain\\myuser")
                 Response.Write("Role1,Role3"); // Simple
-            else if (user == "ldap:domain\\myuser2")
+            else if (user == "geodi:myuser2")
                 Response.Write("{Conditions:['(Role2) and (Role1,Role3)']}"); //Advanced - Role2 ye ve Role1,Role3 den birine aynı anda izin veren dokümanları görebilir.
-            else if (user == "ldap:domain\\myuser3")
+            else if (user == "geodi:myuser3")
             {
                 Geodi.Integration.RestApi.RoleList perms = new Geodi.Integration.RestApi.RoleList();
                 perms.Conditions = new System.Collections.Generic.List<string>();
