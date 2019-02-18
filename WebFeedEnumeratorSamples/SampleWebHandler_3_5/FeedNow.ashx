@@ -33,10 +33,18 @@ public class FeedNow : IHttpHandler
             item.Content.Extension = file.Extension;
             item.MetaData = new List<Geodi.Integration.MetaData>();
 
-            if (file.Name == "307892347de8f29524fbe94e06aada9b246513709e006.pdf")
-                item.TextData = new string[] { "Page1", "Page2" };//her sayfa için metin ayrı ayrı biliniyor
-            else
-                item.TextData = new string[] { "SampleTextData" }; //sayfalar bilinmiyor veya yok.
+            ////Dokümanın tam metnini gönderme
+            //if (file.Name == "307892347de8f29524fbe94e06aada9b246513709e006.pdf")
+            //    item.TextURL=string.Concat(RequestUrl, "/GetText.ashx?content=", HttpUtility.UrlEncode(file.Name));
+            //item.TextURL tanımlı ise metin önce bu adrese sorulur. ["Page1", "Page2] veya sayfalama yoksa/bilinmiyorsa Metin dönülebilir.
+            //Bu adres tanımıszsa veya boş sonuç ContentURL kullanılır.
+            //ContentURL görüntüleyiciler için mutlaka her zaman cevap veren bir adres olmalıdır.
+                    
+            ////Doküman için ek Metin gönderme
+            //if (file.Name == "307892347de8f29524fbe94e06aada9b246513709e006.pdf")
+            //    item.TextData = new string[] { "Page1", "Page2" };//her sayfa için metin ayrı ayrı biliniyor
+            //else
+            //    item.TextData = new string[] { "SampleTextData" }; //sayfalar bilinmiyor veya yok.
 
             Geodi.Integration.MetaData meta = new Geodi.Integration.MetaData();
             meta.Name = "Alan";
