@@ -31,9 +31,13 @@ public class FeedNow : IHttpHandler
             item.ContentSize = file.Length;
             item.Content = new ContentData();
             item.Content.Extension = file.Extension;
-
-
             item.MetaData = new List<Geodi.Integration.MetaData>();
+
+            if (file.Name == "307892347de8f29524fbe94e06aada9b246513709e006.pdf")
+                item.TextData = new string[] { "Page1", "Page2" };//her sayfa için metin ayrı ayrı biliniyor
+            else
+                item.TextData = new string[] { "SampleTextData" }; //sayfalar bilinmiyor veya yok.
+
             Geodi.Integration.MetaData meta = new Geodi.Integration.MetaData();
             meta.Name = "Alan";
             meta.Value = "FeedTest";
