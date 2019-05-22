@@ -42,23 +42,12 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <h2>GEODI Token Servisi Kullanımı  - Örnek Uygulama</h2>
-        <br />
-        <p>
-            Bu uygulama <a href="https://decesw.atlassian.net/wiki/spaces/PAR/pages/86285573/Geodi+Token+API" target="_blank">GOEDI Token Api</a> üzerindeki Token alma yöntemlerini içermektedir. 
-        </p>
-
-        <div>
-            <h3><a href="https://decesw.atlassian.net/wiki/spaces/PAR/pages/86295187/Geodi+Token+API+-+Kullan+c+i+in+Token+Alma" target="_blank">Kullanıcı için Token alma</a></h3>
-        </div>
-        <p>
-            Servisin testini jquery kullanan <a href="TokenApi.html">TokenApi.html</a> ile yapabilir, Bu uygulama içinde token alabilirsiniz.
-        </p>
         <br />
         <div>
             <h3><a href="https://decesw.atlassian.net/wiki/spaces/PAR/pages/1039302662/Geodi+Token+API+-+G+venilen+istemciler+i+in+SSO" target="_blank">SSO Kullanıcı paylaşımı</a></h3>
             <p>
-                Aşağıdaki işlemler yapılıp GetAutoLoginLink servisi kullanılarak GEODI'ye giriş yapmış kullanıcı URL'i elde edilebilir.
+                Aşağıdaki işlemler yapılıp GetAutoLoginLink servisi kullanılarak GEODI'ye giriş yapmış kullanıcı URL'i elde edilebilir.<br>
+				Servis kullanımı için gereken Token sistem yöneticisinden veya [your_geodi_url]/api adreisndeki Token linkinden elde edilebilir.
             </p>
             <ul>
                 <li>GEODI/Settings/TokenClient altına aşağıdaki içerik "<i>.jSettings</i>" uzantılı bir dosya olarak atılmalıdır.
