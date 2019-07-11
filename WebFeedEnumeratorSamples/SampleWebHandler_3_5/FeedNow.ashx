@@ -39,7 +39,7 @@ public class FeedNow : IHttpHandler
             //item.TextURL tanımlı ise metin önce bu adrese sorulur. ["Page1", "Page2] veya sayfalama yoksa/bilinmiyorsa Metin dönülebilir.
             //Bu adres tanımıszsa veya boş sonuç ContentURL kullanılır.
             //ContentURL görüntüleyiciler için mutlaka her zaman cevap veren bir adres olmalıdır.
-                    
+
             ////Doküman için ek Metin gönderme
             //if (file.Name == "307892347de8f29524fbe94e06aada9b246513709e006.pdf")
             //    item.TextData = new string[] { "Page1", "Page2" };//her sayfa için metin ayrı ayrı biliniyor
@@ -67,36 +67,38 @@ public class FeedNow : IHttpHandler
             Settings.GEODIUrl, Settings.GEODIToken);
 
 
-        if(FeedService.BulkFeed(files,30000))
+        if (FeedService.BulkFeed(files))
             context.Response.Write("OK");
         else
             context.Response.Write("NOK");
 
 
-        //////WebRequest Code
-        ////string Url = Settings.GEODIUrl;
-        ////Url = string.Concat(Url, Url.EndsWith("/") ? "" : "/", "FeedHandler?op=BulkFeed");
+        ////////////WebRequest Code
+        //////string Url = Settings.GEODIUrl;
+        //////Url = string.Concat(Url, Url.EndsWith("/") ? "" : "/", "FeedHandler?op=BulkFeed");
 
-        ////HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Url);
-        ////request.Method = "POST";
-        ////request.Accept = "application/json,*/*; q=0.01";
-        ////request.ContentType = "application/x-www-form-urlencoded";
+        ////////Url += "&enumeratorID=" + "...";
 
-        //////Dikkat ! .Net 3.5 JavascriptSerializer Tarih alanları Json formatında Serializer etmiyor.  Settings.GetSerializer içeriğinde oluşturulan Serializer kullanılmalıdır.
-        ////string PostData = string.Format("UserSession={0}&content={1}", Uri.EscapeDataString(Settings.GEODIToken), Uri.EscapeDataString(Settings.GetSerializer().Serialize(files)));
-        ////byte[] data = System.Text.Encoding.UTF8.GetBytes(PostData);
-        ////request.ContentLength = data.Length;
+        //////HttpWebRequest request = (HttpWebRequest)WebRequest.Create(Url);
+        //////request.Method = "POST";
+        //////request.Accept = "application/json,*/*; q=0.01";
+        //////request.ContentType = "application/x-www-form-urlencoded";
 
-        ////using (Stream stream = request.GetRequestStream())
-        ////{
-        ////    stream.Write(data, 0, data.Length);
-        ////}
+        ////////Dikkat ! .Net 3.5 JavascriptSerializer Tarih alanları Json formatında Serializer etmiyor.  Settings.GetSerializer içeriğinde oluşturulan Serializer kullanılmalıdır.
+        //////string PostData = string.Format("UserSession={0}&content={1}", Uri.EscapeDataString(Settings.GEODIToken), Uri.EscapeDataString(Settings.GetSerializer().Serialize(files)));
+        //////byte[] data = System.Text.Encoding.UTF8.GetBytes(PostData);
+        //////request.ContentLength = data.Length;
 
-        ////HttpWebResponse response = (HttpWebResponse)request.GetResponse();
+        //////using (Stream stream = request.GetRequestStream())
+        //////{
+        //////    stream.Write(data, 0, data.Length);
+        //////}
 
-        ////string responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+        //////HttpWebResponse response = (HttpWebResponse)request.GetResponse();
 
-        ////context.Response.Write(responseString);
+        //////string responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
+
+        //////context.Response.Write(responseString);
 
     }
 
