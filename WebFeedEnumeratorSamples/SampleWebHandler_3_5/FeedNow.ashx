@@ -67,7 +67,7 @@ public class FeedNow : IHttpHandler
             Settings.GEODIUrl, Settings.GEODIToken);
 
 
-        if (FeedService.BulkFeed(files))
+        if (FeedService.BulkFeed(files,null,null, 30000,null,null))
             context.Response.Write("OK");
         else
             context.Response.Write("NOK");
