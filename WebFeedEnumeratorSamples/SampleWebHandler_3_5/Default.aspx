@@ -6,11 +6,17 @@
 <head runat="server">
     <title>GEODI Besleme Servisi Kullanımı -  Örnek Uygulama</title>
     <style type="text/css">
-        body {
+        body{
             padding: 10px;
             font-family: Tahoma;
             line-height: 1.5em;
             max-width:800px;
+        }
+        input,textarea 
+        {
+            font-family: Tahoma;
+            line-height: 1.5em;
+            margin:5px;
         }
 
         p, h1, h2, h3 {
@@ -37,14 +43,21 @@
             border-radius: 10px;
             margin-right:60px;
         }
+
+
+    
+
     </style>
+   
 </head>
 <body>
+    
     <form id="form1" runat="server">
+
         <h2>GEODI İçerik Besleme Servisleri - Örnek Uygulama</h2>
         <br />
         <p>
-            Bu uygulama <a href="https://decesw.atlassian.net/wiki/spaces/PAR/pages/47579138" target="_blank">GOEDI Feed Api</a> üzerindeki uzaktan besleme yöntemlerini içermektedir. Örnekler projedeki WebHandler içeriklerinde bulunmaktadır.
+            Bu uygulama <a href="https://decesw.atlassian.net/wiki/spaces/PAR/pages/47579138" target="_blank">GEODI Feed Api</a> üzerindeki uzaktan besleme yöntemlerini içermektedir. Örnekler projedeki WebHandler içeriklerinde bulunmaktadır.
         </p>
 
         <p>
@@ -55,11 +68,28 @@
         <div>
             <h3><a href="https://decesw.atlassian.net/wiki/spaces/PAR/pages/86316691" target="_blank">APP -> GEODI</a></h3>
             <p>
-                Web.Config dosyasında GEODIUrl ve GEODIToken tanımları yapılmış olmalıdır. 
-                Dosyaları şimdi GEODI'ye göndermek için <a href="FeedNow.ashx" target="_blank">tıklayınız</a>
+                Web.Config dosyasında GEODIUrl ve GEODIToken tanımları yapılmış olmalıdır. <i>Aşağıdaki yöntemler ile dosya göndermeyi deneyebilirsiniz</i>
+                <ul>
+                    <li> Projede tanımlı "SampleDocuments" klasörü altındaki örnek dosyaları şimdi GEODI'ye göndermek için <a href="FeedNow.ashx" target="_blank">tıklayınız</a>  </li>
+                    <li> Seçeceğiniz bir dosyayı göndermek için formu doldurunuz.
+                        <fieldset >
+                            <legend>Form </legend>
+                            <asp:FileUpload ID="FileUpload1" runat="server" />
+                            <asp:CheckBox ID="chkDisableInterServerCommunication" runat="server" Text="Dosya içeriğini istekle birlikte gönder (Önerilmez)" />
+                            <asp:Button ID="btnFeedOne" runat="server" OnClick="btnFeedOne_Click" Text="Gönder" />
+                            <br /><asp:Label runat="server" ID="lblFeedStatus"></asp:Label>
+                        </fieldset>
+                    </li>
+
+                    <li> Sorgulama için <a href="DefaultQuery.aspx" target="_blank">tıklayınız.</a></li>
+                </ul>
+                
             </p>
         </div>
+        
         <br />
+        <br />
+    
         <div>
             <h3><a href="https://decesw.atlassian.net/wiki/spaces/PAR/pages/86316510" target="_blank">GEODI -> APP</a></h3>
             <p>
