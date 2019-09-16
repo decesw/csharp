@@ -58,6 +58,7 @@
         <br />
         <p>
             Bu uygulama <a href="https://decesw.atlassian.net/wiki/spaces/PAR/pages/47579138" target="_blank">GEODI Feed Api</a> üzerindeki uzaktan besleme yöntemlerini içermektedir. Örnekler projedeki WebHandler içeriklerinde bulunmaktadır.
+            <font color="red">IIS üzerinde kullanımda Tümleşik Modda bir uygulama hazvuzu gerektirir.</font>
         </p>
 
         <p>
@@ -70,25 +71,34 @@
             <p>
                 Web.Config dosyasında GEODIUrl ve GEODIToken tanımları yapılmış olmalıdır. <i>Aşağıdaki yöntemler ile dosya göndermeyi deneyebilirsiniz</i>
                 <ul>
-                    <li> Projede tanımlı "SampleDocuments" klasörü altındaki örnek dosyaları şimdi GEODI'ye göndermek için <a href="FeedNow.ashx" target="_blank">tıklayınız</a>  </li>
+                    <li> Projede tanımlı "SampleDocuments" klasörü altındaki örnek dosyaları şimdi GEODI'ye göndermek için <a href="FeedNow.ashx" target="_blank">tıklayınız</a> <br />
+                        <small>
+                            Örnek uygulama kendi adresini adres satırından alarak GEODI'ye bildirir. GEODI içeriğe geri dönüp erişemezse (!) hataları gösterebilir. Bu örnek uygulamada GEODI sunucusu tarafından erişilebilir bir adres kullanmalısınız.
+                        </small>
+
+                    </li>
                     <li> Seçeceğiniz bir dosyayı göndermek için formu doldurunuz.
                         <fieldset >
                             <legend>Form </legend>
                             <asp:FileUpload ID="FileUpload1" runat="server" />
-                            <asp:CheckBox ID="chkDisableInterServerCommunication" runat="server" Text="Dosya içeriğini istekle birlikte gönder (Önerilmez)" />
+                            <asp:CheckBox ID="chkDisableInterServerCommunication" runat="server" Text="(*) Dosya içeriğini istekle birlikte gönder (Önerilmez)" />
                             <asp:Button ID="btnFeedOne" runat="server" OnClick="btnFeedOne_Click" Text="Gönder" />
                             <br /><asp:Label runat="server" ID="lblFeedStatus"></asp:Label>
                         </fieldset>
+                        <br />
+                        <small>
+                            (*) - Seçili olduğu durumda GEODI üzerinde yedekleme aktif değilse GEODI veri tutmadığı için viewerlar çalışmaz.<br />
+                            (*) - Seçili olmadığı durumda bu örnek uygulamadaki dosyalar "SampleDocuments" klasöründe tutulur. yeniden erişilebilir. Daha az network trafiği ve daha az sistem yükü ile GEODI'ye iletilir. Bu örnek için "SampleDocuments" klasörüne yazma yetkisi gerektirir. <br />
+                            (*) - Seçili olmadığı durumda örnek uygulama kendi adresini adres satırından alarak GEODI'ye bildirir. GEODI içeriğe geri dönüp erişemezse (!) hataları gösterebilir. Bu örnek uygulamada GEODI sunucusu tarafından erişilebilir bir adres kullanmalısınız.
+                            </small>
+                        <br />
                     </li>
 
                     <li> Sorgulama için <a href="DefaultQuery.aspx" target="_blank">tıklayınız.</a></li>
                 </ul>
-                
             </p>
         </div>
         
-        <br />
-        <br />
     
         <div>
             <h3><a href="https://decesw.atlassian.net/wiki/spaces/PAR/pages/86316510" target="_blank">GEODI -> APP</a></h3>
