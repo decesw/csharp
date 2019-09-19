@@ -7,9 +7,9 @@ using System.IO;
 
 public class CollectEvents : IHttpHandler
 {
-   
 
-    
+
+
     public void ProcessRequest(HttpContext context)
     {
         HttpRequest Request = context.Request;
@@ -26,6 +26,7 @@ public class CollectEvents : IHttpHandler
             EventServiceHelper.EventList.Add(e);
         }
 
+        Response.Write("OK");
     }
 
     public bool IsReusable
