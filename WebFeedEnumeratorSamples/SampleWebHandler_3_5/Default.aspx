@@ -95,6 +95,8 @@
                     </li>
 
                     <li> Sorgulama için <a href="DefaultQuery.aspx" target="_blank">tıklayınız.</a></li>
+                    <li> Viewer olay izleme için <a href="DefaultEventControl.aspx" target="_blank">tıklayınız.</a></li>
+                    
                 </ul>
             </p>
         </div>

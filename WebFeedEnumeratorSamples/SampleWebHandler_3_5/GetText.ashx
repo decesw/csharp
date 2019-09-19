@@ -1,10 +1,10 @@
-﻿<%@ WebHandler Language="C#" Class="GetContent" %>
+﻿<%@ WebHandler Language="C#" Class="GetText" %>
 
 using System;
 using System.Web;
 using System.IO;
 
-public class GetContent : IHttpHandler
+public class GetText : IHttpHandler
 {
 
     public void ProcessRequest(HttpContext context)
