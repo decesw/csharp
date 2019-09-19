@@ -80,6 +80,7 @@
         __type: "Factory.ActionFactory:UrlCallerEventHandler",
         ServiceURL: "<asp:Label runat="server" ID="lblGetEvents"></asp:Label>?wsName={wsName}&contentid={data}&event={event}",
         ActionTargets: "*",
+        AllowCancel:false,
         EventTargets:["ContentViewer"]
     }</code>
 

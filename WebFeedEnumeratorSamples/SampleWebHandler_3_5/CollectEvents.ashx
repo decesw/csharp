@@ -26,7 +26,7 @@ public class CollectEvents : IHttpHandler
             EventServiceHelper.EventList.Add(e);
         }
 
-        Response.Write("1");
+        //Response.Write("1"); //1 or emtpy OK, 0 Cancel
     }
 
     public bool IsReusable
