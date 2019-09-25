@@ -121,12 +121,12 @@
                 <li>GEODI/Settings/RoleProvider altına aşağıdaki içerik "<i>.jSettings</i>" uzantılı bir dosya olarak atılmalıdır.
                     <br />
                     <br />
-<code>    {
+<pre>    {
         DisplayName:"Örnek Uygulama",
         __type: "Factory.ActionFactory:ServerBasedRoleProvider",
         ServiceURL: "<asp:Label runat="server" ID="lblGetRoles"></asp:Label>",
         ActionTargets: "*"
-    }</code>
+    }</pre>
 
                 </li>
             </ul>

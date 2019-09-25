@@ -71,18 +71,17 @@
          <div>
 
             <ul>
-                <li>Bu örnek proje için Web.config altında UseRoles ayarı açılmalıdır.</li>
                 <li>GEODI/Settings/Events altına aşağıdaki içerik "<i>.jSettings</i>" uzantılı bir dosya olarak atılmalıdır.
                     <br />
                     <br />
-<code>    {
+<pre>    {
         DisplayName:"Örnek Olay Yakalama",
         __type: "Factory.ActionFactory:UrlCallerEventHandler",
         ServiceURL: "<asp:Label runat="server" ID="lblGetEvents"></asp:Label>?wsName={wsName}&contentid={data}&event={event}",
         ActionTargets: "*",
         AllowCancel:false,
         EventTargets:["ContentViewer"]
-    }</code>
+    }</pre>
 
                 </li>
             </ul>
@@ -93,7 +92,7 @@
                          
         
         <h3>Olaylar <asp:Button ID="btnRefresh" runat="server" Text="Yenile" /></h3>
-        <asp:TextBox ID="txtEvents" runat="server" Height="100px" ReadOnly="true" disabled TextMode="MultiLine" Width="90%"></asp:TextBox>
+        <asp:TextBox ID="txtEvents" runat="server" style="position:absolute" Height="100px" ReadOnly="true" disabled TextMode="MultiLine" Width="90%"></asp:TextBox>
                       
                    
 

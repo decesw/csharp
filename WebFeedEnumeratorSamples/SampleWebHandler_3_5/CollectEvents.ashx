@@ -18,6 +18,7 @@ public class CollectEvents : IHttpHandler
         EventEntry e = new EventEntry();
         e.EventName = Request.QueryString.Get("event");
         e.ConetntID = Request.QueryString.Get("contentid");
+        e.User = Request.Headers["request-user"];
         e.WorkspaceName = Request.QueryString.Get("wsName");
 
         lock (EventServiceHelper.EventList) {

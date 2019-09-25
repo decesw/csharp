@@ -10,9 +10,11 @@ public class EventEntry
     public string EventName { get; set; }
     public string ConetntID { get; set; }
     public string WorkspaceName { get; set; }
+
+    public string User { get; set; }
     public override string ToString()
     {
-        return string.Format("{0} \t\t{1} \t\t{2}", this.WorkspaceName, this.EventName, this.ConetntID);
+        return string.Format("{0} \t\t{1} \t\t{2} \t\t{3}", this.User, this.WorkspaceName, this.EventName, this.ConetntID);
     }
 }
 
