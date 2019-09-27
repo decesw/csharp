@@ -30,8 +30,14 @@ public class GetRoles : IHttpHandler
                 perms.Conditions = new System.Collections.Generic.List<string>();
                 //Advanced - Role2 ye ve Role1,Role3 den birine aynı anda izin veren dokümanları görebilir.
                 perms.Conditions.Add("(Role2) and (Role1,Role3)");
+
+                //perms.Groups = new System.Collections.Generic.List<string>();
+                //perms.Groups.Add("System Admin");// System Admin GEODI grubunada dahil edildi.Gruptaki tüm yetilere sahip.
+
                 perms.WriteTo(Response, true);
             }
+            else if (user == "geodi:myuser4")
+                Response.Write("Role1,Rol2,Role3,group:System Admin"); // System Admin GEODI grubunada dahil edildi.Gruptaki tüm yetilere sahip.
             else
                 Response.Write("Role3");// Simple
         }
