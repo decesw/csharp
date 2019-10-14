@@ -63,9 +63,30 @@ public class FeedNow : IHttpHandler
             }
             files.Contents.Add(item);
         }
+      
+
+        /*Crawl Test*/
+        /*
+        ContentObject webCrawlTest = new ContentObject();
+        webCrawlTest.ContentURL = "http://www.dece.com.tr";
+        webCrawlTest.MetaData = new List<MetaData>() {
+                new MetaData() {
+                    Name="Test",
+                    Value="TestMeta"
+                }
+            };
+        webCrawlTest.CopyMetdadataToSubContentTree = true;
+        webCrawlTest.CrawlSettings = new ContentCrawlSettings()
+        {
+            TotalContentCount = 10,
+            MaxLevel = 3
+        };
+        files.Contents.Add(webCrawlTest);
+        */
+
+
         Geodi.Integration.RestApi.FeedApi FeedService = new Geodi.Integration.RestApi.FeedApi(
             Settings.GEODIUrl, Settings.GEODIToken);
-
 
         if (FeedService.BulkFeed(files,null,null, 30000,null,null))
             context.Response.Write("OK");
