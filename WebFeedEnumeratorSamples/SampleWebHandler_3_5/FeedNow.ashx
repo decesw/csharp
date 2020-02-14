@@ -22,6 +22,8 @@ public class FeedNow : IHttpHandler
 
         IntegrationObject files = new IntegrationObject();
         files.Contents = new List<ContentObject>();
+        
+            
         foreach (FileInfo file in new DirectoryInfo(context.Server.MapPath("~/SampleDocuments")).GetFiles("*.*"))
         {
             ContentObject item = new ContentObject();
@@ -63,27 +65,52 @@ public class FeedNow : IHttpHandler
             }
             files.Contents.Add(item);
         }
-      
+        
+
 
         /*Crawl Test*/
         /*
-        ContentObject webCrawlTest = new ContentObject();
-        webCrawlTest.ContentURL = "http://www.dece.com.tr";
-        webCrawlTest.MetaData = new List<MetaData>() {
+    ContentObject webCrawlTest = new ContentObject();
+    webCrawlTest.ContentURL = "http://www.dece.com.tr";
+    webCrawlTest.MetaData = new List<MetaData>() {
+            new MetaData() {
+                Name="Test",
+                Value="TestMeta"
+            }
+        };
+    webCrawlTest.CopyMetaDataToSubContentTree = true;
+    webCrawlTest.CrawlSettings = new ContentCrawlSettings()
+    {
+        TotalContentCount = 10,
+        MaxLevel = 3
+    };
+    files.Contents.Add(webCrawlTest);
+    */
+    
+
+            /*Enumerator Manipulation*/
+           /* 
+        ContentObject enumeratorManipule = new ContentObject();
+        enumeratorManipule.ContentURL = "advancedmode";
+        enumeratorManipule.MetaData = new List<MetaData>() {
                 new MetaData() {
-                    Name="Test",
-                    Value="TestMeta"
+                    Name="Test2",
+                    Value="TestMeta2"
                 }
             };
-        webCrawlTest.CopyMetdadataToSubContentTree = true;
-        webCrawlTest.CrawlSettings = new ContentCrawlSettings()
-        {
-            TotalContentCount = 10,
-            MaxLevel = 3
-        };
-        files.Contents.Add(webCrawlTest);
-        */
+        enumeratorManipule.CopyMetaDataToSubContentTree = true;
+        enumeratorManipule.AdvSettings = new Dictionary<string, object>();
 
+        //enumerator is Folder Enumerator
+        enumeratorManipule.AdvSettings["FolderNames"] = Geodi.Integration.RestApi.Helper.ToJSON(new string[] { @"C:\Users\user-\Desktop\Geodi\Karma2" });
+        ////enumeratorManipule.AdvSettings["FolderNames"] = "[\"C:\\\\Users\\\\user-\\\\Desktop\\\\Geodi\\\\Karma2\"]"
+
+        //enumerator is Twiter Enumerator
+        //enumeratorManipule.AdvSettings["IncludeSearch"] = true;
+        //enumeratorManipule.AdvSettings["Queries"] = "[{Ands:'CAD'}]";
+        files.Contents.Add(enumeratorManipule);
+            */
+        
 
         Geodi.Integration.RestApi.FeedApi FeedService = new Geodi.Integration.RestApi.FeedApi(
             Settings.GEODIUrl, Settings.GEODIToken);
